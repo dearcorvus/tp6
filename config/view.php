@@ -24,4 +24,9 @@ return [
     'taglib_end'    => '>',
 
     'taglib_pre_load' => 'app\common\taglib\QuerCms',
+
+    'tpl_replace_string'      => [
+        '__STATIC__' => '/static',
+        '__ROOT__'   => '',
+    ]
 ];

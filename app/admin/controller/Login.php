@@ -94,4 +94,9 @@ class Login extends RestBase
         }
     }
 
+    public function hello($name)
+    {
+
+        return 'Hello,' . $name . '！This is '. $this->request->action();
+    }
 }

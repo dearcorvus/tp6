@@ -118,15 +118,15 @@
         <a href="javascript:openapp('{$menu.url}','{$menu.id}','{$menu_name}',true);">
             <i class="fa fa-caret-right"></i>
             <span class="menu-text">
-									{$menu_name}
-								</span>
+                {$menu_name}
+            </span>
         </a>
         <php>}else{</php>
         <a href="#" class="dropdown-toggle">
             <i class="fa fa-caret-right"></i>
             <span class="menu-text">
-									{$menu_name}
-								</span>
+                {$menu_name}
+            </span>
             <b class="arrow fa fa-angle-right"></b>
         </a>
         <ul class="submenu">
@@ -154,8 +154,8 @@
         <a href="javascript:openapp('{$menu.url}','{$menu.id}','{$menu_name}',true);">
             &nbsp;<i class="fa fa-angle-double-right"></i>
             <span class="menu-text">
-								{$menu_name}
-							</span>
+                {$menu_name}
+            </span>
         </a>
     </li>
 
@@ -268,23 +268,23 @@
                data-toggle="tooltip">
                 <i class="fa fa-home"></i>
             </a>
-            <!--
-            <if condition="cmf_auth_check(cmf_get_current_admin_id(),'portal/AdminCategory/index')">
-                <a class="btn btn-sm btn-success" href="javascript:openapp('{:url('portal/AdminCategory/index')}','index_termlist','文章分类管理');" title="文章分类管理">
+            
+            <!-- <if condition="cmf_auth_check(cmf_get_current_admin_id(),'admin/AdminCategory/index')">
+                <a class="btn btn-sm btn-success" href="javascript:openapp('{:url('admin/AdminCategory/index')}','index_termlist','文章分类管理');" title="文章分类管理">
                     <i class="fa fa-th"></i>
                 </a>
             </if>
 
-            <if condition="cmf_auth_check(cmf_get_current_admin_id(),'portal/AdminArticle/index')">
-                <a class="btn btn-sm btn-info" href="javascript:openapp('{:url('portal/AdminArticle/index')}','index_postlist','文章管理');" title="文章管理">
+            <if condition="cmf_auth_check(cmf_get_current_admin_id(),'admin/AdminArticle/index')">
+                <a class="btn btn-sm btn-info" href="javascript:openapp('{:url('admin/AdminArticle/index')}','index_postlist','文章管理');" title="文章管理">
                     <i class="fa fa-pencil"></i>
                 </a>
-            </if>
-            -->
+            </if> -->
+           
 
-            <if condition="cmf_auth_check(cmf_get_current_admin_id(),'user/AdminAsset/index')">
+            <if condition="cmf_auth_check(cmf_get_current_admin_id(),'admin/AdminAsset/index')">
                 <a class="btn btn-sm btn-info"
-                   href="javascript:openapp('{:url('user/AdminAsset/index')}','userAdminAssetindex','资源管理',true);"
+                   href="javascript:openapp('{:url('admin/AdminAsset/index')}','adminAdminAssetindex','资源管理',true);"
                    title="资源管理"
                    data-toggle="tooltip">
                     <i class="fa fa-file"></i>
@@ -338,7 +338,8 @@
 <load href="/static/js/wind.js">
 <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <load href="/static/admin/js/admin.js">
-<!-- <script src="__TMPL__/public/assets/simpleboot3/js/adminindex.js"></script> -->
+<load href="/static/admin/js/adminindex.js"></load>
+
 <script>
     $(function () {
         $("[data-toggle='tooltip']").tooltip();
@@ -405,8 +406,6 @@
         $(closest_a_next).slideToggle(150).parent().toggleClass("open");
         return false;
     });
-
-
 
 </script>
 </body>

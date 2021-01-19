@@ -64,9 +64,9 @@ class RestBase
     {
         $this->app     = $app ?: Container::get('app');
         $this->request = $this->app['request'];
-
+        
         $this->request->root(com_get_root() . '/');
-
+        //文件版本
         $this->apiVersion = $this->request->header('XX-Api-Version');
 
         // 用户验证初始化
@@ -304,8 +304,6 @@ class RestBase
             $this->error(['code' => 10001, 'msg' => '用户未登录']);
         }
         return $this->userId;
-
-
     }
 
 }

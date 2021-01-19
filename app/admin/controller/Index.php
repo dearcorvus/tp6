@@ -31,12 +31,6 @@ class Index extends AdminBase
      */
     public function index()
     {
-        // $content = hook_one('admin_index_index_view');
-
-        // if (!empty($content)) {
-        //     return $content;
-        // }
-
         $adminMenuModel = new AdminMenuModel();
         $menus          = cache('admin_menus_' . cmf_get_current_admin_id(), '', null, 'admin_menus');
         $menus ="";
@@ -62,76 +56,6 @@ class Index extends AdminBase
 
         View::assign("menus_js_var",json_encode($menusTmp));
 
-        //$admin = Db::name("user")->where('id', cmf_get_current_admin_id())->find();
-        //$this->assign('admin', $admin);
-
         return View::fetch('index');
-    }
-
-
-    /**
-     * 显示创建资源表单页.
-     *
-     * @return \think\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * 保存新建的资源
-     *
-     * @param  \think\Request  $request
-     * @return \think\Response
-     */
-    public function save(Request $request)
-    {
-        //
-    }
-
-    /**
-     * 显示指定的资源
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function read($id)
-    {
-        //
-    }
-
-    /**
-     * 显示编辑资源表单页.
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * 保存更新的资源
-     *
-     * @param  \think\Request  $request
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * 删除指定资源
-     *
-     * @param  int  $id
-     * @return \think\Response
-     */
-    public function delete($id)
-    {
-        //
     }
 }
