@@ -44,8 +44,10 @@ class RestBase
      * @var \think\Request Request实例
      */
     protected $request;
+
     // 验证失败是否抛出异常
     protected $failException = false;
+    
     // 是否批量验证
     protected $batchValidate = false;
 

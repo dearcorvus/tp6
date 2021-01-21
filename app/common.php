@@ -213,3 +213,39 @@ function cmf_auth_check($userId, $name = null, $relation = 'or')
     }
     return $authObj->check($userId, $name, $relation);
 }
+
+/**
+ * 获取网站根目录
+ * @return string 网站根目录
+ */
+function cmf_get_root()
+{
+    $root = request()->root();
+    $root = str_replace("//", '/', $root);
+    $root = str_replace('/index.php', '', $root);
+    if (defined('APP_NAMESPACE') && APP_NAMESPACE == 'api') {
+        $root = preg_replace('/\/api(.php)$/', '', $root);
+    }
+
+    $root = rtrim($root, '/');
+
+    return $root;
+}
+
+/**
+ * 返回带协议的域名
+ */
+function cmf_get_domain()
+{
+    return request()->domain();
+}
+
+/**
+ * 获取后台风格名称
+ * @return string
+ */
+function cmf_get_admin_style()
+{
+    $adminSettings = cmf_get_option('admin_settings');
+    return empty($adminSettings['admin_style']) ? 'simpleadmin' : $adminSettings['admin_style'];
+}

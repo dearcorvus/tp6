@@ -7,6 +7,7 @@ use think\App;
 use think\exception\ValidateException;
 use think\Validate;
 
+use think\cache\driver\Redis;
 /**
  * 控制器基础类
  */
@@ -23,6 +24,11 @@ abstract class BaseController
      * @var \think\App
      */
     protected $app;
+
+    /**
+     * redis实例
+     */
+    protected  $redis ;
 
     /**
      * 是否批量验证
@@ -44,6 +50,7 @@ abstract class BaseController
     public function __construct(App $app)
     {
         $this->app     = $app;
+        $this->redis = new Redis();
         $this->request = $this->app->request;
 
         // 控制器初始化
